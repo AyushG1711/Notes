@@ -1,0 +1,31 @@
+Vim
+
+1. When you write something starting with : (colon) then it is a command in normal mode
+2. When you open a file, you are in normal mode. In different modes, keys have different functionalities
+3. By typing i, you enter into ‘INSERT’ mode and any letter/key you press will have no command meaning
+4. By pressing escape, you can leave insert mode and go back to normal mode
+5. :wq -> write changes into the file and quit
+6. :q -> simply quit
+7. :q! -> quit and do not save the changes 
+8. If you enter into insert mode by clicking i -> you will start writing from 1 letter left from your current cursor position
+9. If you enter into insert mode by clicking a -> you will start writing from 1 letter right from your current cursor position
+10. If you enter into insert mode by clicking o -> you will start writing from next line
+11. If you enter into insert mode by clicking capital I -> you will start writing from beginning of the line 
+12. If you enter into insert mode by clicking capital A -> you will start writing from end of the line 
+13. If you enter into insert mode by clicking capital O -> you will start writing from a new above line 
+14. :set number -> will give numbers starting from 1 to the lines in your file temporarly
+15. :set relativenumber -> will give number to the lines relative to the line where cursor is
+    1. 3 #include
+    2. 2 using nmaespace
+    3. 1 fd
+    4. 4 ..cursor is here
+    5. 1 fd
+    6. 2 ffffff
+    7. 3 fff
+    8. 4 dfd
+16. :set mouse=a -> it will activate the working of mouse, a Is active
+17. :colorscheme blue -> will change colours of vim to blue or you can keep pressing Tab after typing :colorscheme and it will keep giving you different color schemes
+18. You can configure this settings in ~/.vimrc file
+19. y->copy selected text
+20. P->paste
+21. D->delete
