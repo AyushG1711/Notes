@@ -18,3 +18,13 @@ test(‘Test hello’,()=>{
 })
 
 Now this test will check if Hello is present or not. We wanted to show props.name if it exists otherwise Guest. We did not check that part of the div which display the coverage lesser than 100% 
+
+Snapshot 
+
+Reference snapshot is compared with the runtime snapshot your test creates 
+Ref snapshot is stored alongside the test 
+For the first time there is no ref snapshot so the runtime snapshot created during test is considered valid & stored as a ref snapshot 
+
+Now this snapshot can be-
+1. React component, you validate your component against this ref snapshot of that component 
+2. Class 
