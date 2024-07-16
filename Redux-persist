@@ -1,0 +1,11 @@
+stateReconciler:
+First, the redux-store state is init with initial state.
+Soon after, when rehydrating redux-store with the persisted data then how to merge present redux-store state with persisted state, is determined by the stateReconciler you pass to persistConfig object 
+
+Values to stateReconciler property
+1. autoMergeLevel1: It will simply take current redux-store state and replace the 1st level properties’ value with the corresponding values from persisted/incoming state 
+ 	Ex: currentState = {user:{email:””, dob:””}, name:””}
+		incomingState = {user:{email:ayush}}
+		mergedState = {user:{email:ayush}, name:””}
+
+2. autoMergeLevel2: It will replace the 2nd level nested properties of currentState with incomingState 
