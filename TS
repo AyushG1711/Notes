@@ -1,0 +1,71 @@
+Typeof 
+It not only tells that the var is number,func,obj or anything other. Though on consoling it shows exactly this thing only but it actually gives a “type” object corresponding to that thing 
+ex:
+Let obj = {name:”ays”, class:2}
+Type objType = Typeof obj   // type objType = {name:string, class:number}
+
+
+Tuples
+
+It is an array with defined data types at each index of the array. Suppose u define a type array with number at 0 index and string at 1 index then 
+An array of length 2 has defined with types 
+
+ReturnType
+
+It takes the type of function and is used to get the type that the fun is returning 
+Let fun = (x:number):(string|number)=>{
+	if(x%2==0) return “even”
+	else return 2;
+}
+Type funReturnType = ReturnType<typeof fun>;
+Here funReturnType is a type with types allowed being string or number
+
+Narrowing
+
+the process of refining types to more specific types than declared is called narrowing
+For example, 
+function padLeft(padding: number | string, input: string) {
+  if (typeof padding === "number") {
+    return " ".repeat(padding) + input;
+  }
+  return padding + input;
+}
+Here padding type will be narrowed to only ‘number’ at L3
+
+Index access types 
+
+You can access data types of a type’s keys
+
+You need to provide the type in argument, not the variable 
+
+Ex 
+Type person = {
+Name:string, 
+Class:number
+Age:number
+}
+
+Type name = person[“name”]
+Type nameAge = person[“name” | “age”]
+Here “name” | “age” is the UNION TYPE 
+
+Type typ = “name” | “age”
+Type nameAge = person[typ]; 
+
+Const key = “name”;
+Type name = person[key] //ERROR key is not a type 
+
+Error boundary 
+A component becomes error boundary component if any of the 2 methods are defined 
+
+	this.state = {error:false;}
+1. Static getDerivedStateFromError(error){} // this must return a updated state such as -> return {error:true}. Now this will update the state and re-render the component and you can define in render() method that if this.state.error is true then display fallback UI 
+2. componentDidCatch(error, errorInfo) // this can update the state by calling this.setState method but it is not designed for that instead it must report the error to logging service that your app uses
+
+Lifecycle methods
+
+ComponentDidMount(){} //called on initial render 
+
+On every further re-renders to the component such as change in props/change in state, they will cause the componentDidUpdate(prevProps, prevState) method to call 
+
+Just before removing the component from Dom tree, componentWillUnmount() will be called 
