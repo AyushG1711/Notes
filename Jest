@@ -1,0 +1,20 @@
+Watch 
+If it is enabled then jest keeps track of what files changed and will re run the tests belonging to that file only 
+
+Test suites
+1 test file = 1 test suite
+Describe blocks do not constitute a test suite. Suppose App.test.js has 5 describe blocks yet we will have only 1 test suite for 1 App.test.js file, not 5 test suites 
+
+
+Code coverage 
+It is a metric that tells how much % of your code is tested. It specifies the no. of lines, functions, branches are tested. 
+
+Ex:
+<div>Hello {props.name?props.name:”Guest”}</div>
+
+test(‘Test hello’,()=>{
+	const s = screen.getByText(/Hello/)
+	expect(s).toBeInDocument()
+})
+
+Now this test will check if Hello is present or not. We wanted to show props.name if it exists otherwise Guest. We did not check that part of the div which display the coverage lesser than 100% 
