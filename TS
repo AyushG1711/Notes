@@ -55,6 +55,16 @@ Type nameAge = person[typ];
 Const key = “name”;
 Type name = person[key] //ERROR key is not a type 
 
+Keyof
+It takes a type obj/type/interface as argument and returns a type object by UNIONing the keys of obj as string or number 
+
+Let obj = {name:”Ayush”, hello(){}, 1:”@22”}
+Type objType:Keyof typeof obj
+Let obj2:objType; 
+Now obj2 can take either “name”, “hello” or 1;
+1 as number not “1”
+Name and hello as string
+
 Error boundary 
 A component becomes error boundary component if any of the 2 methods are defined 
 
