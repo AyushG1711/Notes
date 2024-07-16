@@ -1,0 +1,11 @@
+Macro vs micro task
+
+Macrotask -> queue that holds all the setTimeout/event/networkcall/dbquery/so on handlers
+Microtask(promiseJob) -> queue holding promise handlers(then/catch/finally)
+
+1. First all micro tasks are executed 
+2. 1 macro task is executed & then again all micro tasks are executed so that by taking in account changes of 1 user event. 
+
+
+Heavy task then perform promise then 
+In between heavy task do event
